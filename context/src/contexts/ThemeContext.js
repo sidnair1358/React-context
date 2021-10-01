@@ -9,8 +9,11 @@ class ThemeContextProvider extends Component {
     dark: { syntax: "#ddd", ui: "#333", bg: "#555" },
   };
   render() {
-    return <div></div>;
+    return (
+      <ThemeContext.Provider value={{ ...this.state }}>
+        {this.props.children}
+      </ThemeContext.Provider>
+    );
   }
 }
-
 export default ThemeContextProvider;
